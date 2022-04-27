@@ -1,0 +1,11 @@
+{
+    "eslint.validate": [
+        "javascript"
+    ],
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "git.ignoreLimitWarning": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}

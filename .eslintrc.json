@@ -1,3 +1,33 @@
 {
-  "extends": "next/core-web-vitals"
+    "extends": [
+        "plugin:prettier/recommended",
+        "plugin:react/recommended",
+        "next/core-web-vitals"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true
+            }
+        ],
+        "import/prefer-default-export": 0,
+        "react/react-in-jsx-scope": 0,
+        "no-alert": 0
+    }
 }
