@@ -1,0 +1,51 @@
+@import '../../styles/base/base-refs';
+
+.background {
+  padding-top: 100px;
+
+  @include mobile {
+    padding-top: 80px;
+  }
+}
+
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  gap: 2rem;
+
+  div:first-of-type {
+    flex-grow: 0;
+  }
+}
+
+.selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 3;
+  position: relative;
+  border: none;
+  background-color: #ecf0f3;
+  font-family: $default-font;
+  font-weight: bold;
+  font-size: 2rem;
+  min-width: 175px;
+  padding: 20px 10px;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.typeSelectContainer {
+  display: flex;
+  gap: 1rem;
+
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: $default-font
+  }
+}

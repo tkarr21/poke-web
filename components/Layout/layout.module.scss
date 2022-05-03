@@ -1,0 +1,13 @@
+@import '../../styles/base/base-refs';
+
+.container {
+  margin: auto 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  gap: 3rem;
+}

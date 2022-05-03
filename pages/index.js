@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import Header from '../components/Header';
-import Homepage from '../components/HomePage';
+import GeneratePage from '../components/GeneratePage';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <Homepage />
+        <GeneratePage />
       </main>
     </>
   )
