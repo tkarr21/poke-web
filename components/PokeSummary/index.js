@@ -20,7 +20,7 @@ const PokeSummary = ({ poke }) => {
       {poke ? 
         <>
           <div className={styles.pokeImg}>
-            <img src={poke.src} alt="your created pokemon" style={{ width: '200px'}}/>
+            <img src={poke.src} alt="created pokemon" style={{ width: '200px'}}/>
           </div>
           <div className={styles.statContainer}>
             <div className={styles.statBox}>

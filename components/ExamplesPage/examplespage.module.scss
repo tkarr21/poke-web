@@ -1,1 +1,22 @@
 @import '../../styles/base/base-refs';
+
+.title {
+  font-size: 3rem;
+  font-family: $default-font;
+  font-weight: bold;
+
+  @include mobile {
+    font-size: 1.8rem;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}

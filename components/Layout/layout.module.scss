@@ -7,12 +7,12 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  padding: 100px 3% 0;
+  padding: 100px 3% 20px;
   gap: 3rem;
 
   @include mobile {
     margin: 0;
-    padding: 80px 2% 20px 2%;
+    padding: 80px 2% 20px;
     gap: 2rem;
     align-items: center;
   }
