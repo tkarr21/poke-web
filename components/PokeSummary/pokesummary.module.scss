@@ -1,0 +1,129 @@
+@import '../../styles/base/base-refs';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: $default-font;
+  gap: 1rem;
+  align-items: center;
+  min-width: 300px;
+  min-height: 300px;
+  padding: 15px 15px;
+  border-radius: 12px;
+  background: #ecf0f3;
+  box-shadow: inset 16px 16px 32px #c9cccf,
+  inset -16px -16px 32px #ffffff;
+}
+
+.pokeImg {
+  padding: 15px 15px;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+  -2px -2px 12px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.statContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 40rem;
+  padding: 10px 10px;
+  border-radius: 12px;
+  background: #ecf0f3;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+  -2px -2px 12px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.statBox {
+  display: flex;
+
+  padding: .5rem .4rem;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+  -2px -2px 12px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.statBoxImage {
+  display:flex;
+  align-items: center;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.statBoxImageMobile {
+  display: none;
+  align-items: center;
+
+  @include mobile {
+    display: flex;
+  }
+}
+
+.statName {
+  font-size: 2.2rem;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+.statValue {
+  font-size: 2.2rem;
+  color: $brand-red;
+  font-weight: 600;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+.dButton {
+  border: none;
+  background-color: #ecf0f3;
+  color: $brand-red;
+  font-family: $default-font;
+  font-weight: bold;
+  font-size: 2.2rem;
+  padding: 0.5rem 0.4rem;
+  
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+  -2px -2px 12px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  2px 2px 8px rgba(0, 0, 0, .3);
+  
+  &:hover {
+    outline: 2px solid #ee4c4c;
+  }
+
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid #ee4c4c;
+  }
+  
+  &:active {
+    border-radius: 5px;
+    color: #ecf0f3;
+    background: #ee4c4c;
+    box-shadow: inset 16px 16px 32px #ca4141,
+      inset -16px -16px 32px #ff5757;
+  }
+
+  @include mobile {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.4rem;
+  }
+}

@@ -1,13 +1,19 @@
 @import '../../styles/base/base-refs';
 
 .container {
-  margin: auto 3%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   position: relative;
   width: 100%;
-  padding-top: 100px;
+  padding: 100px 3% 0;
   gap: 3rem;
+
+  @include mobile {
+    margin: 0;
+    padding: 80px 2% 20px 2%;
+    gap: 2rem;
+    align-items: center;
+  }
 }

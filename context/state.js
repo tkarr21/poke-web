@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 export const AppContext = createContext();
 
 export const AppWrapper = ({ children }) => {
-  const [fetching, setFetching] = useState(true);
-  const [pokemon, setPokemon] = useState({});
+  const [fetching, setFetching] = useState(false);
+  const [pokemon, setPokemon] = useState(null);
 
   return (
     <AppContext.Provider

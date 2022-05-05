@@ -1,21 +1,36 @@
 @import '../../styles/base/base-refs';
 
-.background {
-  padding-top: 100px;
+.title {
+  font-size: 3rem;
+  font-family: $default-font;
+  font-weight: bold;
 
   @include mobile {
-    padding-top: 80px;
+    font-size: 1.8rem;
+  }
+}
+
+.bod {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10rem;
+  justify-content: space-evenly;
+  
+  @include mobile {
+    flex-direction: column;
+    gap: 3rem;
   }
 }
 
 .statsContainer {
   display: flex;
   flex-direction: column;
-  width: 600px;
   gap: 2rem;
 
-  div:first-of-type {
-    flex-grow: 0;
+  @include mobile {
+    width: 100%;
+    min-width:100px;
   }
 }
 
@@ -23,10 +38,104 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 3;
+  flex-grow: 1;
   position: relative;
   border: none;
   background-color: #ecf0f3;
+  font-family: $default-font;
+  font-weight: bold;
+  font-size: 2rem;
+  min-width: 175px;
+  padding: 19px 10px;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, .3);
+
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid #ee4c4c;
+  }
+
+  @include mobile {
+    font-size: 1.5rem;
+    padding: 10px 5px;
+    min-width: 120px;
+    max-height: 37px;
+    border-radius: 5px;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, .3);
+  }
+}
+
+.typeSelectContainer {
+  display: flex;
+  gap: 1rem;
+
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: $default-font;
+
+    @include mobile {
+      font-size: 1.5rem;
+      max-height: 37px;
+    }
+  }
+}
+
+.typeImage {
+  display: flex;
+
+  @include mobile {
+    display: none;
+  }
+
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #ecf0f3;
+  min-width: 175px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+  -2px -2px 12px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.typeImageMobile {
+  display: none;
+  max-height: 37px;
+
+  @include mobile {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #ecf0f3;
+  min-width: 120px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+  -2px -2px 12px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.createButton {
+  border: none;
+  background-color: #ecf0f3;
+  color: $brand-red;
   font-family: $default-font;
   font-weight: bold;
   font-size: 2rem;
@@ -37,15 +146,36 @@
     -2px -2px 12px rgba(255, 255, 255, 0.5),
     inset 2px 2px 4px rgba(255, 255, 255, 0.1),
     2px 2px 8px rgba(0, 0, 0, .3);
-}
 
-.typeSelectContainer {
-  display: flex;
-  gap: 1rem;
+  &:hover {
+    outline: 2px solid #ee4c4c;
+  }
+  
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid #ee4c4c;
+  }
 
-  p {
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: $default-font
+  &:active {
+    border-radius: 5px;
+    color: #ecf0f3;
+    background: #ee4c4c;
+    box-shadow: inset 16px 16px 32px #ca4141,
+    inset -16px -16px 32px #ff5757;
+  }
+
+  @include mobile {
+    font-size: 1.5rem;
+    padding: 10px 5px;
+    min-width: 120px;
+  }
+
+  :disabled {
+    opacity: 0.7;
   }
 }
+
