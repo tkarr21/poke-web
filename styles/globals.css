@@ -19,9 +19,9 @@ body {
 
 body {
   background-color: #ecf0f3;
-  font-family: futura-pt,
-  sans-serif;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: 'Courier New',
+  Courier,
+  monospace;
 }
 
 h1,
@@ -35,7 +35,7 @@ p {
 }
 
 a {
-  color: #136794;
+  color: #ee4c4c;
   cursor: pointer;
   text-decoration: none;
 }

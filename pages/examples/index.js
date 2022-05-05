@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../../components/Header';
 import ExamplesPage from '../../components/ExamplesPage';
+import Footer from '../../components/Footer';
 
 const Examples = () => { 
   return (
@@ -12,6 +13,7 @@ const Examples = () => {
       <main>
         <Header />
         <ExamplesPage />
+        <Footer />
       </main>
     </>
   );

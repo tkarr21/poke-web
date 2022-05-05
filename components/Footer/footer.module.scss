@@ -1,0 +1,13 @@
+@import '../../styles/base/base-refs';
+
+.bar {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background-color: $brand-red;
+  color: #ecf0f3;
+}
+
+.footerSocialLink {
+  margin: 4px 6px;
+}

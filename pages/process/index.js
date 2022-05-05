@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../../components/Header';
 import ProcessPage from '../../components/ProcessPage';
+import Footer from '../../components/Footer';
 
 const Process = () => {
   return (
@@ -12,6 +13,7 @@ const Process = () => {
       <main>
         <Header />
         <ProcessPage />
+        <Footer />
       </main>
     </>
   );
