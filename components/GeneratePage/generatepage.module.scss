@@ -26,7 +26,7 @@
 .statsContainer {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
   @include mobile {
     width: 100%;
@@ -52,6 +52,10 @@
     -2px -2px 12px rgba(255, 255, 255, 0.5),
     inset 2px 2px 4px rgba(255, 255, 255, 0.1),
     2px 2px 8px rgba(0, 0, 0, .3);
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &:focus {
     outline: none;
@@ -113,23 +117,33 @@
 
 .typeImageMobile {
   display: none;
-  max-height: 37px;
-
+  
   @include mobile {
     display: flex;
+    
   }
 
   justify-content: center;
   align-items: center;
   border: none;
   background-color: #ecf0f3;
-  min-width: 120px;
+  max-height: 37px;
+  min-width: 100px;
   padding: 10px 10px;
   border-radius: 5px;
   box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
   -2px -2px 12px rgba(255, 255, 255, 0.5),
   inset 2px 2px 4px rgba(255, 255, 255, 0.1),
   2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+
+  @include mobile {}
 }
 
 .createButton {
@@ -168,14 +182,96 @@
     inset -16px -16px 32px #ff5757;
   }
 
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover {
+      outline: none;
+      cursor: default;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:active {
+      border: none;
+      background-color: #ecf0f3;
+      color: $brand-red;
+    }
+  }
+
   @include mobile {
     font-size: 1.5rem;
     padding: 10px 5px;
     min-width: 120px;
   }
-
-  :disabled {
-    opacity: 0.7;
-  }
 }
 
+.storeButtonContainer {
+  display: flex;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.storeButton {
+  border: none;
+  background-color: #ecf0f3;
+  color: $brand-red;
+  font-family: $default-font;
+  font-weight: bold;
+  font-size: 1.2rem;
+  min-width: 175px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  background: #ecf0f3;
+  box-shadow: 4px 4px 7px #c9cccf,
+  -4px -4px 7px #ffffff;
+  
+  &:hover {
+    outline: 2px solid #ee4c4c;
+  }
+  
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid #ee4c4c;
+  }
+  
+  &:active {
+    border-radius: 5px;
+    color: #ecf0f3;
+    background: #ee4c4c;
+    box-shadow: inset 16px 16px 32px #ca4141,
+      inset -16px -16px 32px #ff5757;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  
+    &:hover {
+      outline: none;
+      cursor: default;
+    }
+  
+    &:focus-visible {
+      outline: none;
+    }
+  
+    &:active {
+      border: none;
+      background-color: #ecf0f3;
+      color: $brand-red;
+    }
+  }
+
+  @include mobile {
+    font-size: 1.2rem;
+    padding: 6px 3px;
+    min-width: 100px
+  }
+}

@@ -3,6 +3,7 @@
 .statsContainer {
   display: flex;
   gap: 1rem;
+  max-width: 100%;
 }
 
 .slideContainer {
@@ -83,17 +84,11 @@
     inset 2px 2px 4px rgba(255, 255, 255, 0.1),
     2px 2px 8px rgba(0, 0, 0, .3);
   background-color: #ee4c4c;
-  
-
-  &:focus {
-    outline: 2px solid #ee4c4c;
-    opacity: 1
-  }
 
   @include mobile {
     height: 20px;
     width: 20px;
-  }
+  };
 }
 
 .value {
@@ -111,5 +106,36 @@
     height: 5px;
     top: 16px;
     left: 5px;
+  }
+}
+
+.numInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 175px;
+  padding: 20px 10px;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+  -2px -2px 12px rgba(255, 255, 255, 0.5),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  2px 2px 8px rgba(0, 0, 0, .3);
+  
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: $default-font;
+  text-align: center;
+  background-color: #ecf0f3;
+  border: none;
+
+  &:focus-visible {
+    outline: 2px solid #ee4c4c;
+  
+  }
+  
+  @include mobile {
+    font-size: 1.5rem;
+    padding: 10px 5px;
+    min-width: 100px;
   }
 }

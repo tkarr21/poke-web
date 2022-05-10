@@ -13,7 +13,7 @@ const ExamplesPage = () => {
       <div className={styles.container}>
         {examples.map((example_poke) => {
           return (
-            <PokeSummary poke={example_poke} />
+            <PokeSummary poke={example_poke} key={example_poke.src}/>
           );
         })}
       </div>
