@@ -157,7 +157,7 @@ const GeneratePage = () => {
           <p className={styles.title}>Poke-Maker</p>
           {renderSliders()}
           <div className={styles.typeSelectContainer}>
-            <div className={styles.selector} style={{ maxWidth: '120px', minWidth: '175px', padding: '20px 10px'}}>
+            <div className={styles.typeText}>
               <p>Type</p>
             </div>
             <label

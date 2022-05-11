@@ -47,3 +47,7 @@ button {
 img {
   max-width: 100%;
 }
+
+input[type="number"i] {
+  padding: 0px;
+}
