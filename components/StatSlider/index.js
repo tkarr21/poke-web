@@ -11,7 +11,7 @@ const StatSlider = ({ name, min, max, value, setValue }) => {
 
   
   useEffect(() => {
-    let fineTune = inputElement.current.offsetWidth > 155 ? 20 : 26
+    let fineTune = inputElement.current.offsetWidth > 155 ? 20 : 24
     setAdjustment(inputElement.current.offsetWidth * 1.0 / (containerElement.current.offsetWidth + fineTune))
   }, [inputElement.current.offsetWidth]);
 
@@ -55,16 +55,23 @@ const StatSlider = ({ name, min, max, value, setValue }) => {
         />
         <div className={styles.value} style={{ width: value != "" ? getWidth() : '50%' }}></div>   
       </div>
-      <input
+      <label
+        htmlFor={name}
         className={styles.numInput}
+      >
+      <input
+        className={styles.numInputText}
+        id={`${name}`}
         type="number"
+        inputMode="tel"
         value={value}
         min={min}
         max={max}
         placeholder={`${min} - ${max}`}
         onChange={e => handleTextInput(e)}
         onBlur={e => handleLoseFocus(e)}
-      />
+        />
+      </label>
     </div>
   );
 };

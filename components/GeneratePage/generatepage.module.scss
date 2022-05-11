@@ -45,8 +45,7 @@
   font-family: $default-font;
   font-weight: bold;
   font-size: 2rem;
-  min-width: 175px;
-  padding: 19px 10px;
+  
   border-radius: 5px;
   box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
     -2px -2px 12px rgba(255, 255, 255, 0.5),
@@ -66,6 +65,29 @@
     outline: 2px solid #ee4c4c;
   }
 
+  
+}
+
+.selectText {
+  font-family: $default-font;
+  font-weight: bold;
+  font-size: 2rem;
+  border: none;
+  background-color: #ecf0f3;
+  width: 100%;
+  min-width: 175px;
+  padding: 19px 10px;
+
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid #ee4c4c;
+    border-radius: 5px;
+  }
+
   @include mobile {
     font-size: 1.5rem;
     padding: 10px 5px;
@@ -73,9 +95,9 @@
     max-height: 37px;
     border-radius: 5px;
     box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
-    -2px -2px 12px rgba(255, 255, 255, 0.5),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-    2px 2px 8px rgba(0, 0, 0, .3);
+      -2px -2px 12px rgba(255, 255, 255, 0.5),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+      2px 2px 8px rgba(0, 0, 0, .3);
   }
 }
 

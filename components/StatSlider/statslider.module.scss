@@ -104,7 +104,7 @@
 
   @include mobile {
     height: 5px;
-    top: 16px;
+    top: 17px;
     left: 5px;
   }
 }
@@ -113,8 +113,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 175px;
-  padding: 20px 10px;
+  
   border-radius: 5px;
   box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
   -2px -2px 12px rgba(255, 255, 255, 0.5),
@@ -127,10 +126,23 @@
   text-align: center;
   background-color: #ecf0f3;
   border: none;
+  
 
+}
+
+.numInputText {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: $default-font;
+  text-align: center;
+  background-color: #ecf0f3;
+  border: none;
+  min-width: 175px;
+  height: 100%;
+  border-radius: 5px;
+  
   &:focus-visible {
     outline: 2px solid #ee4c4c;
-  
   }
   
   @include mobile {
