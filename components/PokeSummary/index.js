@@ -98,12 +98,14 @@ const PokeSummary = ({ poke }) => {
             {fetching ? (
               <i className="fa fa-circle-o-notch fa-spin"></i>
             ) : (
-              "Generate Description? (beta)"
+              "Generate Description (beta)"
             )}
           </button>
           {desc && (
             <div className={styles.statBox}>
-              <p className={styles.statName}>{desc}</p>
+              <p className={styles.statName} style={{ fontSize: "1.5rem" }}>
+                {desc}
+              </p>
             </div>
           )}
         </>
