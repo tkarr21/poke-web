@@ -1,26 +1,36 @@
-import React from 'react';
-import Image from 'next/image';
-import PropTypes from 'prop-types';
-import styles from './pokesummary.module.scss';
-
-
+import React from "react";
+import Image from "next/image";
+import PropTypes from "prop-types";
+import styles from "./pokesummary.module.scss";
+import { createDesc } from "../../backend_calls/poke-server";
+import { useAppContext } from "../../context/state";
 
 const PokeSummary = ({ poke }) => {
+  const { desc, setDesc, fetching, setFetching } = useAppContext();
 
   const download = () => {
-    console.log('calling download');
+    console.log("calling download");
     var element = document.createElement("a");
     element.href = poke.src;
     element.download = "poke-maker.png";
     element.click();
   };
 
+  const generateDesc = () => {
+    setDesc("Generating description...");
+    createDesc(poke.src, setFetching, setDesc);
+  };
+
   return (
     <div className={styles.container}>
-      {poke ? 
+      {poke ? (
         <>
           <div className={styles.pokeImg}>
-            <img src={poke.src} alt="created pokemon" style={{ width: '200px'}}/>
+            <img
+              src={poke.src}
+              alt="created pokemon"
+              style={{ width: "200px" }}
+            />
           </div>
           <div className={styles.statContainer}>
             <div className={styles.statBox}>
@@ -49,20 +59,57 @@ const PokeSummary = ({ poke }) => {
             </div>
             <div className={styles.statBox}>
               <span className={styles.statName}>Type:</span>
-
               <div className={styles.statBoxImage}>
-                <Image src={`/type_images/${poke.type}.png`} alt={`${poke.type} emblem`} height={25} width={25} />
+                <Image
+                  src={`/type_images/${poke.type}.png`}
+                  alt={`${poke.type} emblem`}
+                  height={25}
+                  width={25}
+                />
               </div>
               <div className={styles.statBoxImageMobile}>
-                <Image src={`/type_images/${poke.type}.png`} alt={`${poke.type} emblem`} height={15} width={15} />
+                <Image
+                  src={`/type_images/${poke.type}.png`}
+                  alt={`${poke.type} emblem`}
+                  height={15}
+                  width={15}
+                />
               </div>
               &nbsp; <span className={styles.statValue}>{poke.type}</span>
             </div>
-            <button className={styles.dButton} onClick={() => {download()}}>Download</button>
+            <button
+              className={styles.dButton}
+              onClick={() => {
+                download();
+              }}
+            >
+              Download
+            </button>
           </div>
-        </> :
+
+          <button
+            className={styles.gButton}
+            style={{ fontSize: "1.5rem" }}
+            disabled={fetching}
+            onClick={() => {
+              generateDesc();
+            }}
+          >
+            {fetching ? (
+              <i className="fa fa-circle-o-notch fa-spin"></i>
+            ) : (
+              "Generate Description? (beta)"
+            )}
+          </button>
+          {desc && (
+            <div className={styles.statBox}>
+              <p className={styles.statName}>{desc}</p>
+            </div>
+          )}
+        </>
+      ) : (
         <p className={styles.statName}>Create a Pokemon!</p>
-      }
+      )}
     </div>
   );
 };

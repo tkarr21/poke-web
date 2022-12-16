@@ -127,3 +127,66 @@
     padding: 0.5rem 0.4rem;
   }
 }
+
+.gButton {
+  border: none;
+  background-color: #ecf0f3;
+  color: $brand-red;
+  font-family: $default-font;
+  font-weight: bold;
+  font-size: 1.7rem;
+  min-width: 100%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, .3);
+
+  &:hover {
+    outline: 2px solid #ee4c4c;
+
+  }
+
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ee4c4c;
+  }
+
+  &:active {
+    border-radius: 5px;
+    color: #ecf0f3;
+    background: #ee4c4c;
+    box-shadow: inset 16px 16px 32px #ca4141,
+      inset -16px -16px 32px #ff5757;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover {
+      outline: none;
+      cursor: default;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:active {
+      border: none;
+      background-color: #ecf0f3;
+      color: $brand-red;
+    }
+  }
+
+  @include mobile {
+    font-size: 1.1rem;
+    padding: 10px 5px;
+    
+  }
+}

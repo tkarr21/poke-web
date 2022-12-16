@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from 'react';
-import PropTypes from 'prop-types';
+import { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 
 export const AppContext = createContext();
 
@@ -12,8 +12,9 @@ export const AppWrapper = ({ children }) => {
   const [sp_attack, setSp_attack] = useState("10");
   const [sp_defense, setSp_defense] = useState("20");
   const [speed, setSpeed] = useState("5");
-  const [type, setType] = useState('normal');
+  const [type, setType] = useState("normal");
   const [storedInput, setStoredInput] = useState(null);
+  const [desc, setDesc] = useState("");
 
   return (
     <AppContext.Provider
@@ -28,6 +29,7 @@ export const AppWrapper = ({ children }) => {
         sp_defense,
         speed,
         type,
+        desc,
         setFetching,
         setPokemon,
         setStoredInput,
@@ -37,7 +39,8 @@ export const AppWrapper = ({ children }) => {
         setSp_attack,
         setSp_defense,
         setSpeed,
-        setType
+        setType,
+        setDesc
       }}
     >
       {children}
